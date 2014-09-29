@@ -1,0 +1,107 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.footer {
+ clear: both;
+ float: left;
+}
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 5px;
+    }
+    .body-content {
+        padding: 0;
+    }
+}
+.wrap {
+    width: 100%;
+}
+
+.left-panel {
+    float:left; 
+    width: 14%;
+}
+
+.right-panel {
+float: right;
+    width: 86%;
+}
+/* Just some base styles not needed for example to function */
+img { border: none; }
+p
+{
+	font-size: 1em;
+	margin: 0 0 1em 0;
+}
+
+
+/* CSS Tree menu styles */
+ol.tree
+{
+	padding: 0 0 0 0;
+	width: 120px;
+}
+	li 
+	{ 
+		position: relative; 
+		margin-left: -15px;
+		list-style: none;
+	}
+	li input
+	{
+		position: absolute;
+		left: 0;
+		margin-left: 0;
+		opacity: 0;
+		z-index: 2;
+		cursor: pointer;
+		height: 1em;
+		width: 1em;
+		top: 0;
+	}
+		li input + ol
+		{
+			background: url(../images/toggle-small-expand.png) 40px 1px no-repeat;
+			margin: -1.563em 0 0 -40px; /* 15px */
+            padding-right: 0px;
+            height: 1em;
+			
+		}
+		li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
+	li label
+	{
+		background: url(./images/folder-horizontal.png) 0px 1px no-repeat;
+		cursor: pointer;
+		display: block;
+		padding-left: 20px;
+	}
+
+        li input:checked + ol {
+            background: url(../images/toggle-small.png) 40px 1px no-repeat;
+            margin: -1.563em 0 0 -40px; /* 20px */
+            padding: 1.563em 0 0 80px;
+            height: auto;
+        }
+		li input:checked + ol > li { display: block; margin: 0 0 0.125em;  /* 2px */}
+		li input:checked + ol > li:last-child { margin: 0 0 0.063em; /* 1px */ }
+#map{
+    width: 200px;
+    height: 200px;
+}
